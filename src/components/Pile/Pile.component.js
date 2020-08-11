@@ -42,7 +42,7 @@ class Pile extends Component {
                              min="1"
                              max={count}
                              value={countToTake}
-                             onChange={(e) => {this.setState({countToTake: e.target.value})}}
+                             onChange={(e) => {this.setState({countToTake: parseInt(e.target.value)})}}
                      />
                      <button className="take-pile"
                              onClick={this.takeAndMoveNext}>

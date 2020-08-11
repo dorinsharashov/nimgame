@@ -4,7 +4,8 @@ import {GAME_TYPES} from "../../constants/gameOptions"
 const playersReducerDefaultState = {
     playerList: [],
     currentPlayer: 0,
-    playersQueue: []
+    playersQueue: [],
+    previousPlayer: 0
 };
 
 export default (state = playersReducerDefaultState, action) => {
@@ -42,6 +43,7 @@ export default (state = playersReducerDefaultState, action) => {
                 console.log(`From redux ${newCurrentPlayer}`);
                 return {
                     ...state,
+                    previousPlayer: state.currentPlayer,
                     currentPlayer: newCurrentPlayer,
                     playersQueue: [...state.playersQueue.slice(1), state.playerList[state.currentPlayer]]
                 };
@@ -56,6 +58,7 @@ export default (state = playersReducerDefaultState, action) => {
 
                 return {
                     ...state,
+                    previousPlayer: state.currentPlayer,
                     currentPlayer: newCurrentPlayer ,
                     playersQueue: [...newPlayerList, state.playerList[state.currentPlayer]]
                 }
