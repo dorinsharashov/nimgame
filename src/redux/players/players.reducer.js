@@ -4,14 +4,12 @@ import {GAME_TYPES} from "../../constants/gameOptions"
 const playersReducerDefaultState = {
     playerList: [],
     currentPlayer: 0,
-    playersQueue: [],
-    previousPlayer: 0
+    playersQueue: []
 };
 
 export default (state = playersReducerDefaultState, action) => {
     switch (action.type){
         case INIT_PLAYERS:
-            console.log(action);
             let playerList = []
             if(action.gameType === GAME_TYPES.COMPUTER_NIM_GAME || action.gameType === GAME_TYPES.COMPUTER_RANDOM_GAME){
                 playerList = ["Player 1", "Computer"];
@@ -40,25 +38,22 @@ export default (state = playersReducerDefaultState, action) => {
             let newCurrentPlayer = 0;
             if(action.gameType === GAME_TYPES.REGULAR_GAME || action.gameType === GAME_TYPES.COMPUTER_RANDOM_GAME || action.gameType === GAME_TYPES.COMPUTER_NIM_GAME){
                 newCurrentPlayer = state.currentPlayer ===  state.playerList.length - 1 ? 0 : state.currentPlayer + 1;
-                console.log(`From redux ${newCurrentPlayer}`);
+                //console.log(`From redux ${newCurrentPlayer}`);
                 return {
                     ...state,
-                    previousPlayer: state.currentPlayer,
                     currentPlayer: newCurrentPlayer,
                     playersQueue: [...state.playersQueue.slice(1), state.playerList[state.currentPlayer]]
                 };
             }else if(action.gameType === GAME_TYPES.RANDOM_GAME){
-                newCurrentPlayer = Math.floor((Math.random() * (state.playersQueue.length - 1)));
+                newCurrentPlayer = Math.floor((Math.random() * (state.playerList.length)));
                 if(newCurrentPlayer === state.currentPlayer){
                     return state;
                 }
-                console.log(newCurrentPlayer);
                 let newPlayerList = state.playersQueue;
                 newPlayerList.splice(newPlayerList.indexOf(`Player ${newCurrentPlayer + 1}`), 1);
 
                 return {
                     ...state,
-                    previousPlayer: state.currentPlayer,
                     currentPlayer: newCurrentPlayer ,
                     playersQueue: [...newPlayerList, state.playerList[state.currentPlayer]]
                 }

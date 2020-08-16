@@ -15,18 +15,17 @@ class Pile extends Component {
             countToTake : 0
         }
     }
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.count !== this.props.count && !this.props.isDone && !this.props.turn){
+            this.props.moveToNext(this.props.gameType);
+        }
+    }
 
     takeAndMoveNext = () => {
-        if(this.props.count < this.state.countToTake){
+        if(this.props.count < this.state.countToTake || this.state.countToTake <= 0){
             alert("alert!")
         }else{
             this.props.remove(this.state.countToTake,this.props.index, this.props.currentPlayerName);
-            //if(this.props.gameType === GAME_TYPES.REGULAR_GAME || this.props.gameType === GAME_TYPES.RANDOM_GAME) {
-            if(!this.props.isDone){
-                let a = this.props.moveToNext(this.props.gameType);
-                console.log(`From pile ${a}`);
-            }
-            //}
         }
     }
     render(){
@@ -45,7 +44,8 @@ class Pile extends Component {
                              onChange={(e) => {this.setState({countToTake: parseInt(e.target.value)})}}
                      />
                      <button className="take-pile"
-                             onClick={this.takeAndMoveNext}>
+                             //onClick={() => {this.props.takeAndMoveNext(this.state.countToTake, this.props.count, this.props.index)}}>
+                         onClick={this.takeAndMoveNext}>
                              Take!
                      </button>
                 </div>

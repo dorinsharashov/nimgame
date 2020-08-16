@@ -27,7 +27,7 @@ class GameStatus extends Component{
                     <p className="game-log-header">Game History:</p>
                     {/*<p>{this.props.gameLog}</p>*/}
                     {this.props.gameLog.map((log, index) => {
-                        return <p className="log"><span>{log.name}</span> took <span>{log.count}</span> from pile <span>{log.pileIndex + 1}</span></p>
+                        return <p key={index} className="log"><span>{log.name}</span> took <span>{log.count}</span> from pile <span>{log.pileIndex + 1}</span></p>
                     })}
                 </div>
                 <div className="min-sum">

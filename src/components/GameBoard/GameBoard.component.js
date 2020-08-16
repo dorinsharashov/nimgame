@@ -28,7 +28,7 @@ class GameBoard extends Component {
     }
 
     doneGame = () => {
-        alert(`player ${this.props.previousPlayer + 1} won!!`);
+        alert(`${this.props.currentPlayerName} won!!`);
         this.props.setSetup();
     }
 
@@ -81,7 +81,7 @@ class GameBoard extends Component {
 const mapStateToProps = (state) => ({
     isSetup: state.game.setup,
     isDone: state.piles.isDone,
-    previousPlayer: state.players.previousPlayer
+    currentPlayerName: state.players.playerList[state.players.currentPlayer]
 });
 
 const mapDispatchToProps = (dispatch) => {

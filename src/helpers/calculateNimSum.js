@@ -18,7 +18,6 @@ export const calculateZeroNimSum = (arr) => {
         let bigest2pow = Math.pow(2,dec2bin(biggestNum).length)
         while(bigest2pow !== 0){
             if((bigest2pow & tempNimSum) !== 0){
-                console.log(bigest2pow & tempNimSum);
                 tempArr.forEach((count, index) => {
                     if((count & bigest2pow) !== 0){
                         pileIndex = index;

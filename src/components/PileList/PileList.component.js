@@ -59,6 +59,7 @@ class PileList extends Component{
                             key={index}
                             count={count}
                             index={index}
+                            turn={this.state.turn}
                             // removeFromPile={this.removeFromPile}
                         />)
             })}

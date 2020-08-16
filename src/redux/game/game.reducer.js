@@ -10,7 +10,7 @@ const gameReducerDefaultState = {
 export default (state = gameReducerDefaultState, action) => {
     switch (action.type){
         case SET_GAME:
-            return {...state, game: true, setup: false, gameType: action.gameType};
+            return {...state, game: true, setup: false, gameType: action.gameType, gameLog: []};
         case SET_SETUP:
             return {...state, game: false, setup: true, gameLog: []};
         case UPDATE_GAME_LOG:
