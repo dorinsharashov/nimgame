@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 import {removeFromPile} from '../../redux/piles/piles.action';
 import {moveToTheNextPlayer}from '../../redux/players/players.action';
 import {updateGameLog} from "../../redux/game/game.action";
-import {GAME_TYPES} from '../../constants/gameOptions'
-import pileImage from '../../constants/images/bucket.png';
 import './Pile.scss';
 
 class Pile extends Component {
@@ -29,7 +27,7 @@ class Pile extends Component {
         }
     }
     render(){
-        const {index, count, removeFromPile} = this.props;
+        const {index, count} = this.props;
         const {countToTake} = this.state;
         return(
             <div className="pile" ref={this.ref}>

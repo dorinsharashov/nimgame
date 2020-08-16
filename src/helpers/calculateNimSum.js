@@ -2,14 +2,13 @@ export const calculateZeroNimSum = (arr) => {
     let biggestNum = 0;
     let pileIndex = 0;
     let checkNimSum = 0;
-    let pileCount = 0
+    let pileCount = 0;
     let nimSum = arr.reduce((total, num, index) => {
         if(biggestNum < num){
             biggestNum = num;
             pileIndex = index
         }
         return total ^ num}, 0);
-    let leftMostBit = 0;
     if(nimSum === 0){
         return false;
     } else{

@@ -1,14 +1,10 @@
 import React, {Component} from 'react';
 import {connect } from 'react-redux';
 import "./GameStatus.scss";
-import Pile from "../Pile/Pile.component";
 import Collapse from 'react-bootstrap/Collapse'
-
 import {removeFromPile} from '../../redux/piles/piles.action';
 import {moveToTheNextPlayer}from '../../redux/players/players.action';
 
-import {calculateZeroNimSum} from '../../helpers/calculateNimSum'
-import {GAME_TYPES} from '../../constants/gameOptions'
 
 
 class GameStatus extends Component{

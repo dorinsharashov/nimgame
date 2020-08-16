@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
+import React from 'react';
 import PlayerIcon from '../../constants/images/player.png';
 import './Player.scss';
 
 const Player = ({name}) => (
     <div className="player">
         <p className="player-header">{name}</p>
-        <img className="player-icon" src={PlayerIcon}/>
+        <img className="player-icon" src={PlayerIcon} alt="Player"/>
     </div>
 )
 

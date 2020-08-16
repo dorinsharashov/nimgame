@@ -1,31 +1,14 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import Player from "../Player/Player.component";
 import PileList from "../PileList/PileList.component";
 import './GameBoard.scss';
 import PlayerList from "../PlayerList/PlayerList.compontnt";
 import GameStatus from "../GameStatus/GampStatus.component";
-import Pile from '../Pile/Pile.component';
 import SetupModal from '../GameSetup/GameSetup.component'
 import {setSetup} from '../../redux/game/game.action'
 
-import {initPiles} from '../../redux/piles/piles.action';
-import {initPlayers, moveToTheNextPlayer} from '../../redux/players/players.action';
 
 class GameBoard extends Component {
-    constructor(props){
-        super(props);
-        // this.props.initPiles(
-        //     [23,34,67,6,7,8,10,23,45,6,7,8,1,2,3,4,5,6,7],
-        //     ["Player 1", "Player 2","Player 3", "Player 4"],
-        //     0
-        // );
-        // this.state = {
-        //     currentPlayerIndex: 0,
-        //     players: ["Player 1", "Player 2","Player 3", "Player 4","Player 5", "Player 6", "Player 7", "Player 8","Player 9", "Player 10"],
-        //     piles : [23,34,67,6,7,8,10,23,45,6,7,8,1,2,3,4,5,6,7]
-        // }
-    }
 
     doneGame = () => {
         alert(`${this.props.currentPlayerName} won!!`);

@@ -28,12 +28,6 @@ export default (state = playersReducerDefaultState, action) => {
                     playersQueue: playerList.filter((player, index) => index !== action.currentPlayer)
                 };
             }
-            // return {
-            //     ...state,
-            //     playerList: action.players,
-            //     currentPlayer: action.currentPlayer,
-            //     playersQueue: action.players.filter((player, index) => index !== action.currentPlayer)
-            // };
         case MOVE_TO_NEXT_PLAYER:
             let newCurrentPlayer = 0;
             if(action.gameType === GAME_TYPES.REGULAR_GAME || action.gameType === GAME_TYPES.COMPUTER_RANDOM_GAME || action.gameType === GAME_TYPES.COMPUTER_NIM_GAME){
@@ -57,10 +51,8 @@ export default (state = playersReducerDefaultState, action) => {
                     currentPlayer: newCurrentPlayer ,
                     playersQueue: [...newPlayerList, state.playerList[state.currentPlayer]]
                 }
-            }else if(action.gameType === GAME_TYPES.COMPUTER_RANDOM_GAME){
-
             }
-
+            break;
         default:
             return state;
     }

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect } from 'react-redux';
 import Pile from "../Pile/Pile.component";
 import './PileList.scss'
-import {calculateZeroNimSum} from "../../helpers/calculateNimSum";
 import {removeFromPile} from '../../redux/piles/piles.action';
 import {moveToTheNextPlayer}from '../../redux/players/players.action';
 import {updateGameLog} from "../../redux/game/game.action";
