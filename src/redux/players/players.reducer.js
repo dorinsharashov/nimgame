@@ -38,11 +38,17 @@ export default (state = playersReducerDefaultState, action) => {
                     currentPlayer: newCurrentPlayer,
                     playersQueue: [...state.playersQueue.slice(1), state.playerList[state.currentPlayer]]
                 };
-            }else if(action.gameType === GAME_TYPES.RANDOM_GAME){
+            }else if([GAME_TYPES.RANDOM_GAME, GAME_TYPES.RANDOM_GAME_WITHOUT_REPETITIONS].indexOf(action.gameType) > -1 ){
                 newCurrentPlayer = Math.floor((Math.random() * (state.playerList.length)));
-                if(newCurrentPlayer === state.currentPlayer){
-                    return state;
+
+                if(action.gameType === GAME_TYPES.RANDOM_GAME && newCurrentPlayer === state.currentPlayer){
+                        return state;
+                }else if(action.gameType === GAME_TYPES.RANDOM_GAME_WITHOUT_REPETITIONS){
+                    while(newCurrentPlayer === state.currentPlayer){
+                        newCurrentPlayer = Math.floor((Math.random() * (state.playerList.length)));
+                    }
                 }
+
                 let newPlayerList = state.playersQueue;
                 newPlayerList.splice(newPlayerList.indexOf(`Player ${newCurrentPlayer + 1}`), 1);
 

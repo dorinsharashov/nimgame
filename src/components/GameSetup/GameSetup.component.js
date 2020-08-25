@@ -46,6 +46,7 @@ class GameSetup extends Component {
                                 >
                                     <option value={GAME_TYPES.REGULAR_GAME}>Regular Game - Play against other players</option>
                                     <option value={GAME_TYPES.RANDOM_GAME}>Random Turn Game - Play against other players with random turns</option>
+                                    <option value={GAME_TYPES.RANDOM_GAME_WITHOUT_REPETITIONS}>Random Turn Game without repetitions - Play against other players with random turns without repetitions</option>
                                     <option value={GAME_TYPES.COMPUTER_RANDOM_GAME}>Computer Random Game - Play against the computer with random computer moves</option>
                                     <option value={GAME_TYPES.COMPUTER_NIM_GAME}>Computer Strategic Game - Play against the computer with strategic computer moves</option>
                                 </select>
@@ -83,7 +84,7 @@ class GameSetup extends Component {
                             </div>
                         }
                     {/*</div>*/}
-                    {this.state.stepIndex === 3 && (this.state.gameType === GAME_TYPES.REGULAR_GAME || this.state.gameType === GAME_TYPES.RANDOM_GAME) &&
+                    {this.state.stepIndex === 3 && (this.state.gameType === GAME_TYPES.REGULAR_GAME || this.state.gameType === GAME_TYPES.RANDOM_GAME || this.state.gameType === GAME_TYPES.RANDOM_GAME_WITHOUT_REPETITIONS) &&
                         <div className="setup-players">
                             <p>Configure number of players:</p>
                             <input type="number"
