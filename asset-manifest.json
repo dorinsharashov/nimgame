@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/nimgame/static/css/main.71ca2367.chunk.css",
+    "main.js": "/nimgame/static/js/main.e9b0e8d6.chunk.js",
+    "main.js.map": "/nimgame/static/js/main.e9b0e8d6.chunk.js.map",
+    "runtime-main.js": "/nimgame/static/js/runtime-main.fc7b62bc.js",
+    "runtime-main.js.map": "/nimgame/static/js/runtime-main.fc7b62bc.js.map",
+    "static/css/2.69121389.chunk.css": "/nimgame/static/css/2.69121389.chunk.css",
+    "static/js/2.89e92b00.chunk.js": "/nimgame/static/js/2.89e92b00.chunk.js",
+    "static/js/2.89e92b00.chunk.js.map": "/nimgame/static/js/2.89e92b00.chunk.js.map",
+    "index.html": "/nimgame/index.html",
+    "precache-manifest.1d8b60a0d1e92c1c6dfa475f33c56288.js": "/nimgame/precache-manifest.1d8b60a0d1e92c1c6dfa475f33c56288.js",
+    "service-worker.js": "/nimgame/service-worker.js",
+    "static/css/2.69121389.chunk.css.map": "/nimgame/static/css/2.69121389.chunk.css.map",
+    "static/css/main.71ca2367.chunk.css.map": "/nimgame/static/css/main.71ca2367.chunk.css.map",
+    "static/js/2.89e92b00.chunk.js.LICENSE.txt": "/nimgame/static/js/2.89e92b00.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.fc7b62bc.js",
+    "static/css/2.69121389.chunk.css",
+    "static/js/2.89e92b00.chunk.js",
+    "static/css/main.71ca2367.chunk.css",
+    "static/js/main.e9b0e8d6.chunk.js"
+  ]
+}
